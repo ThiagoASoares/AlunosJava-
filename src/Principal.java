@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
 
 /*
  * @author Thiago A Soares
@@ -8,16 +6,20 @@ import java.util.List;
 public class Principal {
 
 	public static void main(String[] args) {
+		Alunos a1 = new Alunos("Thiago",001);
+		Alunos a2 = new Alunos("Kamila", 002);
+		Notas notas = new Notas();
+		notas.insereAluno(a1);
+		notas.insereAluno(a2);
 		
-		Alunos a1 = new Alunos("Thiago", 001);
-		Alunos a2 = new Alunos("Luis",002);
-		Alunos a3 = new Alunos("Bernardo", 003);
+		notas.criarNota(a1, 9);
+		notas.criarNota(a2, 8);
+		notas.exibeAlunos();
 		
-		List<Alunos> listaAlunos = new ArrayList<Alunos>();
-		listaAlunos.add(a1);
-		listaAlunos.add(a2);
-		listaAlunos.add(a3);
-		a1.exibeAlunos(listaAlunos);
+		notas.alterarNota(a1, 10);
+		notas.excluirNota(a2);
+		notas.exibeAlunos();
+		
 		
 		
 
